@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd4i7mcfjvcmw"]
+
+[ext_resource type="Script" path="res://jumpscare.gd" id="1_i02uf"]
+[ext_resource type="Texture2D" uid="uid://bteqo4y8krd72" path="res://monster.png" id="1_vku5y"]
+[ext_resource type="AudioStream" uid="uid://cik2adfpeksmt" path="res://ethereal_chant_Subclip 04_04.wav" id="2_dcqrx"]
+
+[node name="jumpscare" type="Node2D"]
+script = ExtResource("1_i02uf")
+
+[node name="Monster" type="Sprite2D" parent="."]
+position = Vector2(619, 281)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("1_vku5y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dcqrx")
+autoplay = true

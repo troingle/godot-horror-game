@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgubay1itvuxc"]
+
+[ext_resource type="Texture2D" uid="uid://ny8jl377wvf7" path="res://bricks.png" id="1_wjgp5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fb7mr"]
+albedo_texture = ExtResource("1_wjgp5")
+uv1_scale = Vector3(0.295, 0.295, 0.295)
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_jf776"]
+material = SubResource("StandardMaterial3D_fb7mr")
+size = Vector3(6, 8, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n7wyc"]
+size = Vector3(8, 8, 8)
+
+[node name="Tiles" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.598122, 3.9684, -0.124405)
+mesh = SubResource("BoxMesh_jf776")
+skeleton = NodePath("StaticBody3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.598122, 0.031599, 0.124405)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.610159, -0.0281997, -0.123756)
+shape = SubResource("BoxShape3D_n7wyc")

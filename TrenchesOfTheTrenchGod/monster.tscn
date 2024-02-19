@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cah1dv76y8scw"]
+
+[ext_resource type="Texture2D" uid="uid://bteqo4y8krd72" path="res://monster.png" id="1_k0q10"]
+[ext_resource type="Script" path="res://monster.gd" id="1_svro2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4671j"]
+radius = 1.70745
+height = 4.0
+
+[node name="Monster" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_svro2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4671j")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.215, 0, 0, 0, 0.215, 0, 0, 0, 0.215, 0, 0.76812, 0)
+billboard = 2
+texture = ExtResource("1_k0q10")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true

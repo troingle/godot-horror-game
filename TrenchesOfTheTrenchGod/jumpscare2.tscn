@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddhhtiug66gxs"]
+
+[ext_resource type="Script" path="res://jumpscare2.gd" id="1_vbmn4"]
+[ext_resource type="Texture2D" uid="uid://c5qlv6cxux4kv" path="res://moai.png" id="2_kjwv8"]
+[ext_resource type="AudioStream" uid="uid://dnvd2h1y0kmh0" path="res://glitch.mp3" id="3_v7xox"]
+
+[node name="jumpscare" type="Node2D"]
+script = ExtResource("1_vbmn4")
+
+[node name="Monster" type="Sprite2D" parent="."]
+modulate = Color(0.854902, 0, 0.447059, 1)
+position = Vector2(619, 281)
+scale = Vector2(0.98, 0.98)
+texture = ExtResource("2_kjwv8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v7xox")
+volume_db = -5.0
+autoplay = true
